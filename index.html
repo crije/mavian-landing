@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mavian</title>
+  <link  rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"> </script>
+    <script>
+        const menuValue={
+            Inicio:'Inicio',
+            Nosotros:'Nosotros',
+            Servicios:'Servicios',
+            Clientes:'Clientes',
+            HacerContacto:'Hacer Contacto',
+        }
+        window.addEventListener("load", (event) => {
+            let menu = document.getElementById("nav_elements");
+            menu.addEventListener("click", (event)=>{
+
+                let value= Object.keys(menuValue).find(key => menuValue[key] === event.target.innerHTML);
+
+                if(value!==undefined){
+                    let element_menu=document.getElementById(value);
+                    let allChildElementsOfParentWithClass = document.querySelectorAll('.menu_item');
+                    if(!element_menu.classList.contains('active') && element_menu){
+                        allChildElementsOfParentWithClass.forEach((element) => {
+                            element.classList.remove('active');
+                        });
+                        element_menu.classList.add('active');
+                    }
+                }
+
+
+            });
+        });
+    </script>
+</head>
+<body>
+<header>
+    <div class="header_social">
+        <span><i class="fa-brands fa-twitter"></i></span>
+        <span><i class="fa-brands fa-facebook-f"></i></span>
+        <span> <i class="fa-solid fa-at"></i></span>
+        <span> <i class="fa-brands fa-instagram"></i></span>
+    </div>
+    <div class="header_contact">
+        <span class="header_contact_1"><i class="fa-solid fa-at"></i></span>
+        <span class="header_contact_2">mavian@contacto.com</span>
+        <span class="header_contact_3"><i class="fa-solid fa-phone"></i></span>
+        <span class="header_contact_4">Tel. 9872121234</span>
+    </div>
+
+</header>
+<nav>
+    <div class="logo">
+        <img src="assets/images/logo-mavian.png" alt="logo mavian">
+    </div>
+    <div class="nav_elements" id="nav_elements">
+        <ul>
+            <li id="Inicio" class="menu_item active"><a href="#initial_section">Inicio</a></li>
+            <li id="Nosotros" class="menu_item"><a href="#section_we_are">Nosotros</a></li>
+            <li id="Servicios" class="menu_item"><a href="#section-services">Servicios</a></li>
+            <li id="Clientes" class="menu_item"><a href="#clients_section">Clientes</a></li>
+            <li id="HacerContacto" class="menu_item"><a href="#contact_section">Hacer Contacto</a> </li>
+        </ul>
+
+    </div>
+</nav>
+<main>
+  <div class="container cont-page" id="initial_section">
+    <div class="d-grid colums-2-1">
+        <div class="cont-info-about-us">
+            <p class="up_heading cyan_text about_p1">Mavian Alternativa empresarial</p>
+            <h1 class="dark_blue_text heading1 about_h1">
+                Somos un grupo de
+                profesionales conformados
+                por Ing. Gestión Empresarial,
+                Contadores y Abogados
+            </h1>
+            <p class="body_text about_p2">
+                Nuestro Servicio <strong>“Gancho”</strong> es la Gestoría Vehicular, en el que atraemos clientes a la oficina y posteriormente al cliente se le presentan otras necesidades.
+            </p>
+            <div class="cont-btn-alternativa">
+                <span class="btn_about btn_about_primary">Quiero saber más<i class="fa-solid fa-chevron-right circle-icon icon-arrow"></i></span>
+                <a  href="https://api.whatsapp.com/send?phone=529871110755&amp;text=¡Hola!%20Esta%20por%20contactar%20con%20el%20equipo%20de%20Mavian" target="_blank" rel="nofollow">
+                <span  class="btn_about btn_about_secondary">Contactar en Whatsapp<i class="fa-brands fa-whatsapp icon-whatsapp"></i></span>
+                </a>
+            </div>
+        </div>
+        <diV class="image-about-us">
+            <img class="shadow-img" src="assets/images/img1.png">
+        </diV>
+    </div>
+
+    <div class="d-grid colums-1-2" id="section_we_are">
+        <diV class="image-why-us" >
+            <img class="shadow-img" src="assets/images/img2.png">
+        </diV>
+        <div class="why-us">
+            <p class="up_heading cyan_text">Nosotros</p>
+            <h2 class="dark_blue_text heading1 why_h2">
+                ¿Por qué nosotros?
+            </h2>
+
+            <p class="body_text why_p1">
+                Sucede que muchas personas prefieren contratarnos para regularizar sus vehículos en cuestión de placas y tenencias, sin embargo muchas veces no se puede emplacar en quintana roo, esto puede ser por falta de documentos o alguna otra razón, entonces nosotros podemos hacer estos trámites en varios estado de la república mexicana: Estado de México, Morelos, Oaxaca, Michoacan, Veracruz, Guerrero.
+            </p>
+            <p class="body_text why_p2">
+                Otro producto <strong>“Gancho”</strong> es el trámite de licencias de conducir, reunimos los requisitos y acompañamos al cliente durante el trámite hasta obtener la licencia de conducir
+            </p>
+        </div>
+    </div>
+
+    <div class="d-flex cont-contact shadow" id="section_contact">
+        <div class="ghost-contact">
+            <div class="contact_whatsapp_text">
+                <div>
+                    <p class="up_heading cyan_text heading_whatsapp_contact">Trámites vehiculares</p>
+                    <h2 class="dark_blue_text heading2 txt-tramites">
+                        ¿Quieres agilizar tus trámites vehiculares?
+                        Contacta con uno de nuestros agentes
+                    </h2>
+                </div>
+                <div>
+
+                    <a  href="https://api.whatsapp.com/send?phone=529871110755&amp;text=¡Hola!%20Esta%20por%20contactar%20con%20el%20equipo%20de%20Mavian" target="_blank" rel="nofollow">
+                    <span class="btn_about btn_about_primary btn_about_primary_whatsapp">
+                           Contactar en Whatsapp
+                        <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
+                    </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="img-contact">
+            <!--                <img  src="assets/images/img3.jpg">-->
+        </div>
+    </div>
+
+    <div class="d-grid colums-1-1 cont-nosotros shadow">
+        <div class="pd-mision-vision">
+            <p class="up_heading cyan_text heading_we_are">Nosotros</p>
+            <div class="titulo">
+                <h2 class="dark_blue_text heading2 ">¿Quiénes sómos?</h2>
+            </div>
+            <p class="body_text">
+                Nosotros ofrecemos nuestros mejores conocimientos y experiencia que garantizarán la prestación de una atención ágil y de calidad durante el trabajo en conjunto con nuestros clientes, para alcanzar y lograr los distintos proyectos que se nos encomiendan.
+            </p>
+
+
+            <img class="marca-agua" src="assets/images/img4.png"/>
+        </div>
+
+        <div>
+            <div class="cont-info-mision-vision">
+                <div class="pd-mision-vision">
+                    <div class="titulo">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <h2 class="dark_blue_text heading2">Nuestra visión</h2>
+                    </div>
+                    <p class="body_text">
+                        Ser referencia a nivel municipal y estatal como una organización líder en la prestación de servicios administrativos, contables y gestoría administrativa.
+                    </p>
+
+                </div>
+                <div class="pd-mision-vision">
+                    <div class="titulo">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <h2 class="dark_blue_text heading2"> Nuestra misión</h2>
+                    </div>
+                    <p class="body_text">
+                        Nosotros ofrecemos nuestros mejores conocimientos y experiencia que garantizarán la prestación de una atención ágil y de calidad durante el trabajo en conjunto con nuestros clientes, para alcanzar y lograr los distintos proyectos que se nos encomiendan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-services" id="section-services">
+        <div class="services_left">
+            <div>
+                <p class="up_heading cyan_text heading_service_left">Servicios</p>
+                <h2 class="dark_blue_text heading2 heading_2_service_left">
+                    Nuestros servicios integrales están diseñados para facilitar todos tus procesos jurídicos
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="d-grid colums-1-1 ">
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">01</span><span class="paragraph_services">Servicios Administrativos</span>
+                </div>
+                <p class="paragraph_section_section_left body_text">Los servicios administrativos es una diligencia de algún pago, es decir, acudir a alguna dependencia de gobierno a realizar un pago, ejemplo el pago de predial, hasta los trámites municipales.</p>
+            </div>
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">02</span><span class="paragraph_services">Servicios Administrativos</span>
+                </div>
+                <p class="paragraph_section_section_right body_text">Los servicios administrativos es una diligencia de algún pago, es decir, acudir a alguna dependencia de gobierno a realizar un pago, ejemplo el pago de predial, hasta los trámites municipales.</p>
+            </div>
+
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">03</span><span class="paragraph_services">Servicios Contables</span>
+                </div>
+                <p class="paragraph_section_section_left body_text">Asesoría y prestación de servicios contables, estos abarcan desde conseguir un cita ante el SAT para tramitar la firma electrónica, constitución de empresa , registro de empresa ante el SAT, alta de actividad económica, calculo y declaración de impuestos, registros de pólizas contables, generar estados financieros.</p>
+            </div>
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">04</span><span class="paragraph_services">Nómina y seguro social</span>
+                </div>
+                <p class="paragraph_section_section_right body_text">
+                    Proporcionamos a las empresas opciones de calidad para la administracion de nomina, logrando beneficios para las organizaciones y atendiendo las disposiciones vigentes en materia laboral, de seguridad social y fiscal.
+                </p>
+            </div>
+
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">05</span><span class="paragraph_services">Apertura de negocios:Servicios de gestoría general</span>
+                </div>
+                <ul>
+                    <li>Citas ante el SAT para la obtención de:</li>
+                    <li>Registro Federal de Contribuyentes (R.F.C.).</li>
+                    <li> Firma Electrónica Avanzada (E.Firma antes FIEL).</li>
+                    <li> Asesoría fiscal y regularización por declaraciones pendientes.</li>
+                    <li>Estrategias fiscales legales para la reducción de impuestos a pagar.</li>
+                    <li>Declaraciones anuales</li>
+                    <li>Solicitud de devolución de impuestos y saldos a favor.</li>
+                    <li>Autorización de materia de Donatarias Autorizadas y Donaciones.</li>
+                    <li>Liquidación de empresas.</li>
+                </ul>
+            </div>
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">06</span><span class="paragraph_services">Contabilidad</span>
+                </div>
+                <p class="paragraph_section_section_right body_text">
+                    Realizamos por ti, tu contabilidad mediante servicios profesionales que te ayudan al cumplimiento de tus obligaciones fiscales ante el SAT y complementado con asesoría adecuada para cuidar tus impuestos y evitar que sean un dolor de cabeza.
+                </p>
+            </div>
+
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">07</span><span class="paragraph_services">Servicios fiscales</span>
+                </div>
+                <ul>
+                    <li>Citas ante el SAT para la obtención de:</li>
+                    <li>Registro Federal de Contribuyentes (R.F.C.).</li>
+                    <li> Firma Electrónica Avanzada (E.Firma antes FIEL).</li>
+                    <li> Asesoría fiscal y regularización por declaraciones pendientes.</li>
+                    <li>Estrategias fiscales legales para la reducción de impuestos a pagar.</li>
+                    <li>Declaraciones anuales</li>
+                    <li>Solicitud de devolución de impuestos y saldos a favor.</li>
+                    <li>Autorización de materia de Donatarias Autorizadas y Donaciones.</li>
+                    <li>Liquidación de empresas.</li>
+                </ul>
+            </div>
+            <div class="grid_item">
+                <div class="titulo">
+                    <span class="number_service">08</span><span class="paragraph_services">Servicios jurídicos</span>
+                </div>
+                <p class="paragraph_section_section_right body_text">Primera etapa: estudio de factibilidad
+                <p class="paragraph_section_section_right body_text">Segunda etapa: solicitud de registro</p>
+                <p class="paragraph_section_section_right body_text">Ingreso de solicitud de registros ante el IMPI</p>
+                <p class="paragraph_section_section_right body_text">Resultado: título de propiedad de marca con una vigencia de 10 años prorrogables.</p>
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+    <div class="jumbotron">
+        <div class="container container-jb">
+            <div class="d-flex cont-services-more shadow">
+                <div class="ghost-contact">
+                    <div>
+                        <p class="up_heading cyan_text heading_whatsapp_contact">Servicios</p>
+                        <h2 class="dark_blue_text heading2 txt-contact">
+                            También contamos con estos servicios disponibles
+                        </h2>
+                        <div  class="services-more-text">
+                            <div class="container_service_more">
+                                <img class="" src="assets/images/prestamo.png"/>
+                                <p class="paragraph_services">Proceso de testamento</p>
+                            </div>
+                            <div class="container_service_more">
+                                <img class="" src="assets/images/ley.png"/>
+                                <p class="paragraph_services">Juicio contencioso administrativo</p>
+                            </div>
+                            <div class="container_service_more">
+                                <img class="" src="assets/images/contrato.png"/>
+                                <p class="paragraph_services">Servicios juridicos en materia laboral para empresas</p>
+                            </div>
+                            <div class="container_service_more">
+                                <span class="btn_about mg-t20 btn_about_primary">
+                                    Quiero saber más
+                                    <i class="fa-solid fa-chevron-right circle-icon icon-arrow"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-services-more">
+                    <img  src="assets/images/img5.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="clients_section">
+            <div class="services_left">
+                <div class="headingWhite">
+                    <p class="up_heading cyan_text heading_service_left">Clientes</p>
+                    <h2 class="white-color heading2">
+                        La experiencia de nuestras firmas se reflejan en cada uno de los servicios que brindamos en a nuestros clientes
+                    </h2>
+                </div>
+
+                <div class="d-grid colums-4-4">
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo1.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo2.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo3.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo4.svg">
+                    </div>
+
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo5.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo6.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo7.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo8.svg">
+                    </div>
+
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo9.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo10.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo11.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo12.svg">
+                    </div>
+
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo13.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo14.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo15.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo16.svg">
+                    </div>
+
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo17.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo18.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo19.svg">
+                    </div>
+                    <div class="logo-img">
+                        <img  src="assets/images/logo_clientes/logo20.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="contact_section">
+        <div class="d-flex cont-services-more">
+            <div class="img-services-more">
+                <img class="shadow-img" src="assets/images/img6.png">
+            </div>
+            <div class="cont-dudas">
+                <div class="info-dudas">
+                    <p class="up_heading cyan_text heading_whatsapp_contact">Contacto</p>
+                    <h2 class="dark_blue_text heading2">
+                        ¿Tienes dudas?
+                    </h2>
+                    <h2 class="dark_blue_text heading2">
+                        envíanos un mensaje
+                    </h2>
+                    <div  class="services-more-text">
+                        <div class="container_service_more">
+                            <i class="fa-regular fa-at icons-dudas"></i>
+                            <p class="paragraph_section_section_right body_text">Correo: mavian@contacto.com</p>
+                        </div>
+                        <div class="container_service_more">
+                            <i class="fa-solid fa-phone icons-dudas"></i>
+                            <p class="paragraph_section_section_right body_text">Telefónico: 987 212 123 56 78</p>
+                        </div>
+                        <div class="container_service_more">
+                            <p class="paragraph_section_section_right body_text">Redes sociales:</p>
+                            <i class="fa-brands fa-instagram icons-dudas"></i>
+                            <i class="fa-brands fa-facebook-f icons-dudas"></i>
+                            <i class="fa-brands fa-whatsapp icons-dudas"></i>
+                        </div>
+                        <div class="container_service_more cont-btn-dudas">
+                                <span class="btn_about mg-t20 btn_about_primary mr-0">
+                                    Quiero saber más
+                                    <i class="fa-solid fa-chevron-right circle-icon icon-arrow"></i>
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="jumbotron-footer">
+        <div class="container container-footer">
+            <div class="d-flex cont-contact shadow">
+                <div class="ghost-contact">
+                    <div class="contact_whatsapp_text">
+                        <div>
+                            <p class="up_heading cyan_text heading_whatsapp_contact">Trámites vehiculares</p>
+                            <h2 class="dark_blue_text heading2 txt-tramites">
+                                ¿Quieres agilizar tus trámites vehiculares?
+                                Contacta con uno de nuestros agentes
+                            </h2>
+                        </div>
+                        <div>
+                            <a  href="https://api.whatsapp.com/send?phone=529871110755&amp;text=¡Hola!%20Esta%20por%20contactar%20con%20el%20equipo%20de%20Mavian" target="_blank" rel="nofollow">
+                            <span class="btn_about btn_about_primary btn_about_primary_whatsapp">
+                            Contactar en Whatsapp
+                            <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
+                            </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-footer">
+                    <!--                <img  src="assets/images/img3.jpg">-->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="services_left">
+                <div class="headingWhite">
+                    <img src="assets/images/logo-mavian-b.png" alt="">
+                </div>
+                <div class="footer">
+                    <div>
+                        <div class="header_social">
+                            <span><i class="fa-brands fa-twitter"></i></span>
+                            <span><i class="fa-brands fa-facebook-f"></i></span>
+                            <span> <i class="fa-solid fa-at"></i></span>
+                            <span> <i class="fa-brands fa-instagram"></i></span>
+                        </div>
+                    </div>
+                    <div class="d-flex cont-nav-footer">
+                        <div><a>Inicio</a></div>
+                        <div><a>Nosotros</a></div>
+                        <div><a>Servicios</a></div>
+                        <div><a>Clientes</a></div>
+                    </div>
+                    <div class="copy-right">
+                        <p class="paragraph_section_section_right body_text">Mavian © 2023. All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
