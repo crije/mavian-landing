@@ -4,6 +4,7 @@
     <title>Mavian</title>
   <link  rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="https://kit.fontawesome.com/61ebb60581.js" crossorigin="anonymous"> </script>
     <script>
         const menuValue={
@@ -33,10 +34,30 @@
 
             });
         });
+        window.addEventListener("load", (event) => {
+            let menu = document.getElementById("icon-close");
+            menu.addEventListener("click", (event)=>{
+            let  menu_style=  document.getElementById('menu_mobile')
+                if(window.getComputedStyle(menu_style).display==='inline'){
+                    menu_style.style.display = "none";
+                }
+
+            });
+            let nav_bar = document.getElementById("icon-menu-mobile");
+            nav_bar.addEventListener("click", (event)=>{
+                let  menu_style=  document.getElementById('menu_mobile')
+                if(window.getComputedStyle(menu_style).display==='none'){
+                    menu_style.style.display = "inline";
+                }
+
+
+            });
+        });
+
     </script>
 </head>
 <body>
-<header>
+<header class="header">
     <div class="header_social">
         <span><i class="fa-brands fa-twitter"></i></span>
         <span><i class="fa-brands fa-facebook-f"></i></span>
@@ -51,7 +72,7 @@
     </div>
 
 </header>
-<nav>
+<nav id="desktop">
     <div class="logo">
         <img src="assets/images/logo-mavian.png" alt="logo mavian">
     </div>
@@ -66,8 +87,42 @@
 
     </div>
 </nav>
+<nav id="mobile">
+    <div class="nav-grid">
+        <div class="cont-logo-mobile">
+            <img src="assets/images/logo-mavian.png" alt="logo mavian">
+        </div>
+        <div id="icon-menu-mobile" class="icon-menu-mobile">
+            <span><i class="fa-solid fa-bars"></i></span>
+        </div>
+    </div>
+</nav>
+<div id="menu_mobile">
+    <div class="pd">
+      <div class="icon-close" id="icon-close">
+        <img src="assets/images/logo-mavian-b.png" alt="logo mavian">
+        <span><i class="fa-solid fa-xmark"></i></span>
+      </div>
+
+      <div  class="menu_mobile_content">
+        <ul>
+            <li><a>Inicio</a></li>
+            <li><a>Nosotros</a></li>
+            <li><a>Servicios</a></li>
+            <li><a>Clientes</a></li>
+            <li><a>Hacer Contacto</a> </li>
+        </ul>
+        <div class="menu_social">
+            <span><i class="fa-brands fa-twitter"></i></span>
+            <span><i class="fa-brands fa-facebook-f"></i></span>
+            <span> <i class="fa-solid fa-at"></i></span>
+            <span> <i class="fa-brands fa-instagram"></i></span>
+        </div>
+      </div>
+    </div>
+</div>
 <main>
-  <div class="container cont-page" id="initial_section">
+  <div class="container cont-page">
     <div class="d-grid colums-2-1">
         <div class="cont-info-about-us">
             <p class="up_heading cyan_text about_p1">Mavian Alternativa empresarial</p>
@@ -82,9 +137,7 @@
             </p>
             <div class="cont-btn-alternativa">
                 <span class="btn_about btn_about_primary">Quiero saber más<i class="fa-solid fa-chevron-right circle-icon icon-arrow"></i></span>
-                <a  href="https://api.whatsapp.com/send?phone=529871110755&amp;text=¡Hola!%20Esta%20por%20contactar%20con%20el%20equipo%20de%20Mavian" target="_blank" rel="nofollow">
                 <span  class="btn_about btn_about_secondary">Contactar en Whatsapp<i class="fa-brands fa-whatsapp icon-whatsapp"></i></span>
-                </a>
             </div>
         </div>
         <diV class="image-about-us">
@@ -92,7 +145,7 @@
         </diV>
     </div>
 
-    <div class="d-grid colums-1-2" id="section_we_are">
+    <div class="d-grid colums-1-2">
         <diV class="image-why-us" >
             <img class="shadow-img" src="assets/images/img2.png">
         </diV>
@@ -103,7 +156,8 @@
             </h2>
 
             <p class="body_text why_p1">
-                Sucede que muchas personas prefieren contratarnos para regularizar sus vehículos en cuestión de placas y tenencias, sin embargo muchas veces no se puede emplacar en quintana roo, esto puede ser por falta de documentos o alguna otra razón, entonces nosotros podemos hacer estos trámites en varios estado de la república mexicana: Estado de México, Morelos, Oaxaca, Michoacan, Veracruz, Guerrero.
+                Sucede que muchas personas prefieren contratarnos para regularizar sus vehículos en cuestión de placas y tenencias, sin embargo muchas veces no se puede emplacar en quintana roo, esto puede ser por falta de
+                documentos o alguna otra razón, entonces nosotros podemos hacer estos trámites en varios estado de la república mexicana: Estado de México, Morelos, Oaxaca, Michoacan, Veracruz, Guerrero.
             </p>
             <p class="body_text why_p2">
                 Otro producto <strong>“Gancho”</strong> es el trámite de licencias de conducir, reunimos los requisitos y acompañamos al cliente durante el trámite hasta obtener la licencia de conducir
@@ -111,24 +165,21 @@
         </div>
     </div>
 
-    <div class="d-flex cont-contact shadow" id="section_contact">
+    <div class="d-flex cont-contact shadow contact">
         <div class="ghost-contact">
             <div class="contact_whatsapp_text">
                 <div>
-                    <p class="up_heading cyan_text heading_whatsapp_contact">Trámites vehiculares</p>
+                    <p class="up_heading cyan_text">Trámites vehiculares</p>
                     <h2 class="dark_blue_text heading2 txt-tramites">
                         ¿Quieres agilizar tus trámites vehiculares?
                         Contacta con uno de nuestros agentes
                     </h2>
                 </div>
                 <div>
-
-                    <a  href="https://api.whatsapp.com/send?phone=529871110755&amp;text=¡Hola!%20Esta%20por%20contactar%20con%20el%20equipo%20de%20Mavian" target="_blank" rel="nofollow">
                     <span class="btn_about btn_about_primary btn_about_primary_whatsapp">
                            Contactar en Whatsapp
                         <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
                     </span>
-                    </a>
                 </div>
             </div>
         </div>
@@ -176,7 +227,7 @@
         </div>
     </div>
 
-    <div class="section-services" id="section-services">
+    <div class="section-services">
         <div class="services_left">
             <div>
                 <p class="up_heading cyan_text heading_service_left">Servicios</p>
@@ -274,8 +325,8 @@
         <div class="container container-jb">
             <div class="d-flex cont-services-more shadow">
                 <div class="ghost-contact">
-                    <div>
-                        <p class="up_heading cyan_text heading_whatsapp_contact">Servicios</p>
+
+                        <p class="up_heading cyan_text heading_service_left">Servicios</p>
                         <h2 class="dark_blue_text heading2 txt-contact">
                             También contamos con estos servicios disponibles
                         </h2>
@@ -299,7 +350,7 @@
                                 </span>
                             </div>
                         </div>
-                    </div>
+
                 </div>
                 <div class="img-services-more">
                     <img  src="assets/images/img5.png">
@@ -307,10 +358,10 @@
             </div>
         </div>
 
-        <div class="container" id="clients_section">
+        <div class="container">
             <div class="services_left">
                 <div class="headingWhite">
-                    <p class="up_heading cyan_text heading_service_left">Clientes</p>
+                    <p class="up_heading cyan_text heading_service_left">Servicios</p>
                     <h2 class="white-color heading2">
                         La experiencia de nuestras firmas se reflejan en cada uno de los servicios que brindamos en a nuestros clientes
                     </h2>
@@ -386,7 +437,7 @@
         </div>
     </div>
 
-    <div class="container" id="contact_section">
+    <div class="container">
         <div class="d-flex cont-services-more">
             <div class="img-services-more">
                 <img class="shadow-img" src="assets/images/img6.png">
@@ -441,12 +492,10 @@
                             </h2>
                         </div>
                         <div>
-                            <a  href="https://api.whatsapp.com/send?phone=529871110755&amp;text=¡Hola!%20Esta%20por%20contactar%20con%20el%20equipo%20de%20Mavian" target="_blank" rel="nofollow">
                             <span class="btn_about btn_about_primary btn_about_primary_whatsapp">
                             Contactar en Whatsapp
                             <i class="fa-brands fa-whatsapp icon-whatsapp"></i>
                             </span>
-                            </a>
                         </div>
                     </div>
                 </div>

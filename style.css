@@ -77,7 +77,7 @@ a {
     position: relative;
     text-decoration: none;
 }
-
+.icon-menu-mobile{display: flex;justify-content: end;}
 .border_card_containers_images {
     border-radius: 10px 10px 10px 10px;
     box-shadow: 0 6px 6px -6px rgb(38, 33, 98, 0.2);
@@ -124,7 +124,7 @@ a {
 }
 
 
-nav {
+#desktop {
     height: 92px;
     display: grid;
     font-size: 17px;
@@ -134,7 +134,6 @@ nav {
     grid-template-columns:[margin_left]112px [nav_first] 165px [nav_second]auto [margin_right]112px;
     grid-template-areas:"margin_left nav_first nav_second  margin_right";
 }
-
 .logo {
     grid-area: nav_first;
 }
@@ -150,9 +149,6 @@ nav div img {
     font-weight: 700;
     grid-area: nav_second;
     justify-self: end;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
 
 }
 
@@ -168,6 +164,12 @@ nav div img {
     list-style: none;
     padding: 0;
 
+}
+.nav_elements ul li a:visited {
+    color: inherit;
+}
+.nav_elements ul li a {
+    color: inherit;
 }
 
 .nav_elements li:nth-last-child(n+2) {
@@ -185,7 +187,54 @@ nav div img {
 .nav_elements h2 {
     margin-right: 18px;
 }
-
+/* ESTILOS MENU MOBILE */
+#menu_mobile{
+    display: none;
+}
+/* ESTILOS MENU RESPONSIVO */
+#mobile{
+    box-shadow: 0 6px 11px rgba(0,0,0,0.2);
+    display: none;
+}
+.nav-grid{
+    display: grid;
+    grid-template-columns: 1fr 65px;
+    padding: 25px;
+    align-items: center;
+}
+#mobile div img {
+    width: 160px;
+}
+.icon-menu-mobile i{
+    font-size: 35px;
+}
+.icon-close{
+    font-size: 35px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+.pd{    padding: 18px 28px;}
+.menu_mobile_content ul{
+    list-style: none;
+    color: #fff;
+    font-size: 30px;
+    padding-left: 0;
+    text-align: center;
+    height: 100%;
+    display: grid;
+    gap: 60px;
+    margin-top: 4em;
+    font-family: 'Manrope';
+}
+.menu_social{text-align: center;
+    margin-top: 60px;
+    font-size: 35px;
+    color: #fff;}
+    .menu_social span{margin: 0px 15px;}
+.icon-close img{width: 250px;}
+#mobile{display: none;}
 /* ========== NUEVOS ESTILOS ============*/
 .cont-page{
     display: grid;
@@ -679,24 +728,16 @@ nav div img {
     font-weight: 800;
 }
 
-.grid_item {
-
-}
-
-.grid_item ul li a {
+.grid_item ul li {
     color: var(--primary_dark);
     font-family: Raleway;
     font-weight: 400;
 }
-.nav_elements ul li a:visited {
- color: inherit;
-}
-.nav_elements ul li a {
-    color: inherit;
-}
+
 .grid_item ul {
     padding: 20px;
     line-height: 1.5;
+    font-size: 15px;
 }
 
 .services_more_information {
@@ -712,7 +753,7 @@ nav div img {
 }
 
 .services_more_right {
-    grid-area: service_grid_right
+    grid-area: service_grid_right;
 }
 
 .services_more_left .sub_heading {
@@ -724,7 +765,7 @@ nav div img {
 }
 
 .container_service_more, .container_service_more p {
-    color: var(--primary_color_dark_blue)
+    color: var(--primary_color_dark_blue);
 }
 
 .grid_clients_logos {
@@ -745,8 +786,62 @@ nav div img {
 .grid_area_4{
     grid-area: grid_area_4;
 }
+#menu_mobile{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #08133ed1;
+    z-index: 999;
+    padding-top: 50px;
+    top: 0;
+    animation: fadeIn 0.4s;
+}
+@-webkit-keyframes slideInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
 
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
 /* =============== ESTILOS RESPONSIVOS ================= */
+
 @media (max-width: 1260px){
     .container{
         width: 80vw;
@@ -759,7 +854,6 @@ nav div img {
     .heading1{font-size: 30px;}
     .about_p2{margin-top: 18px;}
     .why_p1, .why_p2 {margin-top: 24px;}
-    .cont-services{}
 }
 @media (max-width: 1100px){
     .cont-btn-alternativa .btn_about{
@@ -782,18 +876,20 @@ nav div img {
     .about_p2{padding-right: 0;}
     .about_p1,.heading_service_left {margin-bottom: 0;}
     .why_h2{margin-top: 0px;}
-    .heading_2_service_left {padding-right: 420px;}
+    .heading_2_service_left {padding-right: 420px;margin-bottom: 35px;}
     .section-services .d-grid {gap: 35px;}
-    .heading_2_service_left{margin-bottom: 35px;}
     .cont-btn-alternativa{
         display: grid;
         gap: 15px;
     }
 }
-@media (max-width: 700px) {
+@media (max-width: 768px){
+    header{grid-template-columns:[margin_left] 60px [header_first] auto  [header_third] auto [margin_right] 60px !important;z-index: 1000;position: relative;}
     .heading_2_service_left {
         padding-right: 0;
     }
+    #desktop{display: none;}
+    #mobile{display: grid;}
     .colums-1-1{grid-template-columns: 1fr;}
     .pd-mision-vision {padding: 40px 40px;}
     .logo-img img {height: 90px;padding: 0 0px;}
@@ -801,4 +897,177 @@ nav div img {
     .img-services-more{display: none;}
     .headingWhite{width: 260px;}
     .headingWhite img{width: 100%;}
+}
+@media (max-width: 750px){
+    .container{margin: 25px;}
+    #desktop{display: none !important;}
+    #mobile{display: grid; }
+    #menu_mobile{
+        display: none;
+        height: 100%;
+        width: 100%;
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        background-color: rgba(8,19,62, 0.9); /* Black w/opacity */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    }
+    .menu_mobile_content{
+        position: relative;
+        font-family: Manrope;
+        font-weight: 700;
+        color: #f8f9fb;
+        top: 20px; /* 25% from the top */
+        width: 100%; /* 100% width */
+        text-align: center; /* Centered text/links */
+        margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+    }
+    .colums-1-2, .colums-2-1 {grid-template-columns: 1fr;}
+    .image-about-us{display: none;}
+    .about_p2 {
+      padding-right: 185px;
+      font-size: 18px;
+    }
+    .heading1 {
+      font-size: 28px;
+      font-weight: 500;
+    }
+    .cont-btn-alternativa{grid-template-columns: 1fr 1fr;width: 85%;}
+    .up_heading{font-size: 15px;font-weight: 500;}
+    .cont-btn-alternativa .btn_about{
+      width: 255px;
+      padding: 15px 25px;
+      font-size: 26px;
+      text-align: left;
+    }
+    .btn_about{
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr auto;
+    }
+    .icon-whatsapp{font-size: 38px;}
+    .icon-arrow{font-size: 25px;width: 22px;height: 22px;}
+    .why_p1, .why_p2 {margin-top: 38px;}
+    .why-us{margin-top: 35px;}
+    .cont-contact{height: 350px;}
+    .ghost-contact{height: 100%;}
+    .img-contact{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60%;
+        height: 100%;
+        background-image: url("assets/images/contact_whatsapp.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .contact:before{background: linear-gradient(to right, rgba(255,255,255,1)35%, rgba(255,255,255,0.4), rgba(255,255,255,0)) !important;}
+    .cont-nosotros{
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    .pd-mision-vision{padding: 40px;}
+/*    .heading_we_are{margin-top: 25px;}*/
+    .heading2{font-size: 34px;font-weight: 500;}
+    .marca-agua {
+      width: 750px;
+      position: absolute;
+      left: -410px;
+      top: 0;
+    }
+    .heading_2_service_left{padding-right: 0;margin-bottom: 65px;}
+    .footer{grid-template-columns: 1fr;gap: 25px;text-align: center;}
+    .container-footer{margin-top: -23vh !important;margin-bottom: 8vh !important;}
+}
+@media (max-width: 420px){
+    header{
+        justify-content: center;
+        grid-template-columns: [margin_left] 20px [header_first] 0 [header_third] auto [margin_right] 20px !important;
+    }
+    #menu_mobile{z-index: 999;}
+    .header .header_social{display: none;}
+    .header_contact_1 {margin-right: 4px;}
+    .header_contact_3 {padding-left: 20px;}
+    .header_contact{font-size: 14px;}
+    .menu_mobile_content ul{gap: 40px;margin-top: 2em;}
+    .menu_mobile_content{top:0;}
+    .cont-contact:before{
+        content: "";
+    display: inline-flex;
+    background: linear-gradient(to right, rgba(255,255,255,1)5%, rgba(255,255,255,0.4), rgba(255,255,255,0));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    }
+    .ghost-contact{background: none;}
+    .img-footer{top: 0 !important;background-position: top right -195px !important;}
+    .cont-btn-alternativa{
+        /*width: 100%;*/
+    }
+    .btn_about_primary_whatsapp{width: auto;}
+    .cont-btn-alternativa{gap: 36px;}
+    .cont-btn-alternativa .btn_about{
+        width: 100%;
+        font-size: 16px;
+        padding: 3px 10px;
+        font-weight: 500;
+    }
+    .icon-whatsapp {
+        font-size: 25px;
+    }
+    .icon-arrow {
+        font-size: 14px;
+        width: 10px;
+        height: 10px;
+    }
+    .colums-1-1 {
+        grid-template-columns: 1fr;
+    }
+    .body_text, .up_heading {
+      font-size: 16px;
+    }
+    .about_p2{
+        padding-right: 30px;
+    }
+    .heading2 {
+      font-size: 38px;
+    }
+    .paragraph_services,.grid_item ul{font-size: 14px;}
+    .txt-tramites{
+        width: 100%;
+    }
+    .heading2 {
+        font-size: 25px;
+    }
+    .contact_whatsapp_text{padding: 0;}
+    .cont-contact{
+        padding: 60px 40px;
+        height: 265px;
+    }
+    .colums-4-4 {
+        grid-template-columns: auto auto auto;
+        gap: 0px;
+    }
+    .logo-img img{height: 65px;}
+    .container {
+         margin: 0px;
+        width: auto;
+        margin-bottom: 6vh;
+    }
+    header{grid-template-columns: auto auto auto;}
+    .cont-page{margin-top: 40px !important;gap: 50px;}
+    .why-us,.section-services{padding: 15px;}
+    .shadow-img {filter: drop-shadow(0px 0 8px rgb(38 33 98 / 25%));}
+    .shadow {box-shadow: 0px 0 8px rgb(38 33 98 / 25%);}
+    .pd-mision-vision {padding: 18px 15px;}
+}
+@media (max-width: 368px){
+    .cont-contact{
+            height: 316px;
+    }
 }
